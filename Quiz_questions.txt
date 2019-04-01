@@ -1,0 +1,24 @@
+Quiz Questions
+
+Incentive
+
+1) How to fix the problem that as time goes, the chain of blocks becomes longer and longer, 
+which makes mining harder and require more space to construct a full node?
+
+
+2) There seems to be a lot of overhead with maintaining a blockchain. At what point does the 
+cost of maintaining the blockchain outweigh its benefits? How do you incentivize miners when 
+they are taking a loss and balance the fact that miners are less incentivized to mine as more 
+miners join the network (smaller chance of winning PoW)?
+
+
+3) Would the transaction fee increase when the difficulty to get coinbase rewards become higher
+ and higher? If so, would that discourage people from using bitcoin?
+ 
+ 
+4) Why does the total amount of bitcoin set to be fixed?
+
+
+5) With time goes by, the reward for building a blockchain decreased. But the difficulty increased, 
+which means a pool need more nodes to solve the hashing problem. This will make the miner gain less. 
+That said, does this mean the service fee for a transaction is going to increase when time goes?
