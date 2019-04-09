@@ -6,7 +6,7 @@ Topic: Incentive
 which makes mining harder and require more space to construct a full node?
 
 Answer) Use checkpoints instead of syncing from the geneis block. Nodes can do a full sync 
-        from a officially recognized checkpoint(checkpoint created every 30 days), and then 
+        from a officially recognized checkpoint(created every 30 days), and then 
         continue to do validation of the entire blockchain, with far less storage required 
         compared to a full archive node.
 
@@ -16,9 +16,19 @@ cost of maintaining the blockchain outweigh its benefits? How do you incentivize
 they are taking a loss and balance the fact that miners are less incentivized to mine as more 
 miners join the network (smaller chance of winning PoW)?
 
+Answer) The point at which the cost of maintaining a node exceeds the net reward (transaction fee + coin based reward), it is no longer profitable to mine.
+Following are few ways to increase mining incentives:
+--> increase transaction fees
+--> increase block size 
+--> reduce block times
+--> reduce block difficulty
+--> increae coin based reward
+
 
 3) Would the transaction fee increase when the difficulty to get coinbase rewards become higher
  and higher? If so, would that discourage people from using bitcoin?
+ 
+ Answer) Yes. Increasing difficulty will require more resources to mine a block. As a result the cost to mine a block increase. This has to be supplemented with an increae in incentives for the miners to continue to mine, which currently is only possible through an increase in transaction fee. This could potentially discourage people from doing transactions on bitcoin.
  
  
 4) Why does the total amount of bitcoin set to be fixed?
