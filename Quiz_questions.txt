@@ -1,6 +1,6 @@
 Quiz Questions
 
-Incentive
+Topic: Incentive
 
 1) How to fix the problem that as time goes, the chain of blocks becomes longer and longer, 
 which makes mining harder and require more space to construct a full node?
