@@ -5,7 +5,10 @@ Topic: Incentive
 1) How to fix the problem that as time goes, the chain of blocks becomes longer and longer, 
 which makes mining harder and require more space to construct a full node?
 
-Answer) Use checkpoints instead of syncing from the geneis block. Nodes can do a full sync from a officially recognized checkpoint(checkpoint created every 30 days), and then continue to do validation of the entire blockchain, with far less storage required compared to a full archive node.
+Answer) Use checkpoints instead of syncing from the geneis block. Nodes can do a full sync 
+        from a officially recognized checkpoint(checkpoint created every 30 days), and then 
+        continue to do validation of the entire blockchain, with far less storage required 
+        compared to a full archive node.
 
 
 2) There seems to be a lot of overhead with maintaining a blockchain. At what point does the 
