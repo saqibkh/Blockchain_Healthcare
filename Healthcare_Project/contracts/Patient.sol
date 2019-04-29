@@ -27,8 +27,8 @@ contract Patient {
     emit PatientPropertyChanged("Gender Changed");
   }
 
-  function generateTokens() private view returns (string memory) {
-    string memory token = "aaaaa";
+  function generateTokens() public returns (string memory) {
+    string memory token = "";
     return token;
   }
 
@@ -62,22 +62,22 @@ contract Patient {
   }
 
   function addNewMedicalRecord(address provider_address, 
-                               string memory _newMedicalRecord) public returns (bool){
+                               string memory _newMedicalRecord, string memory patient_ID) public returns (bool) {
     string memory tokens = generateTokens();
     bool result = false;
-    if (my_database.verifyProvider(tokens, provider_address)){
-     result = my_database.addNewMedicalRecord(tokens, provider_address, _newMedicalRecord);
+    if (my_database.verifyProvider(tokens, provider_address, patient_ID)){
+      result = my_database.addNewMedicalRecord(tokens, provider_address, _newMedicalRecord, patient_ID);
       emit PatientPropertyChanged("Request to add new Medical Records");
-   } else {
+    } else {
       emit PatientPropertyChanged("Request to add new Medical Records Failed");
     }
     return result;
   }
 
-  function viewMedicalRecord(address provider_address) public returns (string memory) {
+  function viewMedicalRecord(address provider_address, string memory patient_ID) public returns (string memory) {
     string memory tokens = generateTokens();
-    if (my_database.verifyProvider(tokens, provider_address)){
-      string memory medical_records = my_database.viewMedicalRecord(tokens, provider_address);
+    if (my_database.verifyProvider(tokens, provider_address, patient_ID)){
+      string memory medical_records = my_database.viewMedicalRecord(tokens, provider_address, patient_ID);
       emit PatientPropertyChanged("Request to view Medical Records");
       return medical_records;
     } else {
@@ -85,5 +85,32 @@ contract Patient {
       return ("Failed");
     }
   }
+
+  function setNewPrescription(address provider_address, string memory patient_ID, 
+                              string memory new_prescription) public returns (bool) {
+    string memory tokens = generateTokens();
+    bool result = false;
+    if (my_database.verifyProvider(tokens, provider_address, patient_ID)){
+      result = my_database.setPrescription(tokens, provider_address, new_prescription, patient_ID);
+      emit PatientPropertyChanged("Request to add new prescription");
+    } else {
+      emit PatientPropertyChanged("Request to add new prescription failed");
+    }
+    return result;
+  }
+
+  function getPresecription(address _address, string memory patient_ID) public returns (string memory) {
+    string memory tokens = generateTokens();
+    if (my_database.verifyPharmacy(tokens, _address, patient_ID)){
+      string memory prescription = my_database.getPrescription(tokens, _address, patient_ID);
+      emit PatientPropertyChanged("Request to view prescription");
+      return prescription;
+    } else {
+      emit PatientPropertyChanged("Request to view prescription failed");
+    }
+    return "Failed";
+  }
+
+
 
 }
